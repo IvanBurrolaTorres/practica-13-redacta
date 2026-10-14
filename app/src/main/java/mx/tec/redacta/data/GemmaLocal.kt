@@ -53,7 +53,8 @@ class GemmaLocal @Inject constructor(
                 cacheDir = contexto.cacheDir.absolutePath
             )
         )
-        runCatching { withContext(Dispatchers.Default) { nuevo.initialize() } }
+        // Experimento D2: deliberadamente en el hilo principal para observar el bloqueo.
+        runCatching { nuevo.initialize() }
             .onSuccess {
                 motor = nuevo
                 _estado.value = EstadoModelo.Listo
