@@ -19,6 +19,8 @@ Medición real con **Recado → Más amable** en el AVD `Medium_Phone` (2 GB):
 - Respuesta observada: «Hola. Me gustaría que laváramos los platos en el fregadero hoy. No me gusta que se atraganten y me da un poco de asco. Gracias por tu cooperación.»
 - Añadió contenido que no estaba en el recado («se atraganten», «me da un poco de asco»). La prueba unitaria usa pedazos sintéticos y no mide la velocidad real de Gemma.
 
+En otra generación real, «Detener» cortó en unos **12 pedazos**, conservó el texto parcial y devolvió el botón «Redactar».
+
 ## Ejercicio C1 — ¿Por qué no obedeció?
 
 No se capturó la salida con el prompt antiguo antes de implementar C2. En la prueba real con las reglas de C2 aún hubo cambios de sentido y contenido inventado; por eso el prompt reduce la ambigüedad, pero no garantiza obediencia.
