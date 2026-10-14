@@ -38,3 +38,13 @@ Hipótesis para comprobar comparando la respuesta antes y después de C2: si sol
 Probar el aviso «Mañana no hay clase. No pregunten. Lo que falte lo ven en su casa y el lunes hay examen de todo.» con **Más amable** y comprobar que no cambien los datos. Después, usar un texto de Aviso para buscar una frase añadida que no venga del original.
 
 Resultado real y frase inventada: **pendientes de observar con Gemma**. Un modelo de 1B puede omitir o añadir detalles pese a las instrucciones; por eso se advierte al usuario que revise la respuesta y se prueba el formato, pero no se puede garantizar semánticamente que cada reescritura conserve todo el sentido.
+
+## Prueba real del entorno — 14 oct 2026
+
+- Instalé y abrí `mx.tec.redacta` en el AVD `Medium_Phone` (Android 37.2 beta3). La pantalla mostró **«Falta el modelo»** y la ruta esperada `/storage/emulated/0/Android/data/mx.tec.redacta/files/gemma3-1b-it-int4.litertlm`.
+- Después de instalar la app, el AVD reportó **4.5 GB libres en `/data`**. El archivo Gemma no está en Descargas ni en el AVD.
+- El manifiesto no declara `INTERNET`; el paquete no mostró ese permiso entre los permisos concedidos.
+- Intenté iniciar el AVD con 4 GB. El emulador avisó que el host solo tenía unos 3.2 GB disponibles (5.1 GB requeridos por esa configuración), cambió a renderizado por software y terminó desconectándose. La app alcanzó a abrir la pantalla de modelo faltante, pero no se pudo hacer inferencia.
+- Hugging Face ya muestra el formulario **«Acknowledge licensed»** para `litert-community/Gemma3-1B-IT`. Aún falta que el usuario confirme la licencia antes de descargar el archivo.
+
+Por estas limitaciones, B3 (velocidad/primer token), C1/C3 (respuestas reales de Gemma) y D2 (bloqueo al inicializar el modelo) siguen pendientes; no se sustituyen por valores ficticios.
