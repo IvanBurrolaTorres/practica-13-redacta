@@ -43,5 +43,6 @@ Gemma contestó: «Les recordamos que mañana no hay clase. No se atrevan y no h
 - Descargué el archivo autorizado `gemma3-1b-it-int4.litertlm` (**584,417,280 bytes**) y lo copié con ADB. Después, la app mostró **«Gemma 3 1B · listo»**.
 - El AVD reportó **4.5 GB libres en `/data`** después de instalar la app y antes de copiar el modelo.
 - `AndroidManifest.xml` no declara `INTERNET`; el paquete tampoco mostró ese permiso concedido.
+- Activé modo avión en el AVD, generé otra respuesta de Recado (**41 tokens a 30.0 tok/s**) y confirmé que Gemma funcionó sin red. Después restauré el modo de red normal.
 - Intenté iniciar el AVD con 4 GB. El host avisó que solo tenía unos 3.2 GB disponibles (5.1 GB requeridos), cambió a renderizado por software y el emulador se desconectó. Con la configuración de 2 GB sí pude cargar Gemma y generar respuestas.
 - El experimento D2 está documentado con sus cuadros omitidos en `docs/experimento-hilo.md`.
